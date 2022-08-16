@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <TodosPage v-bind:todos="todos"/>
+    <TodosPage v-bind:todos="todos" v-on:del-todo="deleteTodo"/>
   </div>
 </template>
 
@@ -31,6 +31,12 @@ export default {
           completed : false
         },
       ]
+    }
+   },
+   methods : {
+    deleteTodo(id){
+      this.todos = this.todos.filter(todo => todo.id !== id);
+      console.log("data has clicked !");
     }
    }
 }

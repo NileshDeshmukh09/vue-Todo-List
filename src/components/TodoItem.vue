@@ -7,7 +7,8 @@
             type="checkbox"
             v-on:change="markComplete">
             {{ todo.title }}
-         <button class="del"> x </button>
+
+         <button @click="$emit('del-todo', todo.id)" class="del"> x </button>
       </p>
    </div>
 </template>
@@ -42,6 +43,8 @@ export default {
   color: antiquewhite;
   border: none;
   border-radius: 50%;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
   float: right;
 }
