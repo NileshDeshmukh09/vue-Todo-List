@@ -1,15 +1,18 @@
 <template>
   <div id="app">
+  <HeaderPage />
     <TodosPage v-bind:todos="todos" v-on:del-todo="deleteTodo"/>
   </div>
 </template>
 
 <script>
-import TodosPage from './components/TodosPage.vue'
+import HeaderPage from './components/layouts/HeaderPage.vue';
+import TodosPage from './components/TodosPage.vue';
 
 export default {
   name: 'App',
   components: {
+    HeaderPage,
     TodosPage,
   },
    data(){
